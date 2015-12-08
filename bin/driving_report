@@ -1,0 +1,11 @@
+$LOAD_PATH.push File.dirname(File.expand_path(__FILE__))+"/../lib/ruby"
+require 'driving_history'
+
+input_file = ARGV[0]
+
+unless File.exists? input_file
+  abort "Given input file not found, Please check"
+else
+  DrivingHistory.import(input_file)
+  DrivingHistory.print_report
+end
